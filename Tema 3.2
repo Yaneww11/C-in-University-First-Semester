@@ -1,0 +1,45 @@
+#include <iostream>
+#include <locale>
+using namespace std;
+
+int main()
+{
+    setlocale(LC_ALL,"Bulgarian");
+
+    int day,month;
+    cout << "Enter a day: " << endl;
+    cin >> day;
+    if(!cin){
+        cout << "Wrong input";
+        return 1;
+    }
+    if (day < 1 || day > 31){
+        cout << "Wrong input";
+        return 2;
+    }
+
+     cout << "Enter a month: " << endl;
+    cin >> month;
+    if(!cin){
+        cout << "Wrong input";
+        return 3;
+    }
+    if (month < 1 || month > 12){
+        cout << "Wrong input";
+        return 4;
+    }
+if((month == 1 && (day >= 20 && day <=31)) || (month == 2 && (day >=1 && day <= 18))){
+    cout << "Водолей" << endl;
+}
+else if((month == 2 && (day >= 19 && day <=28)) || (month == 3 && (day >=3 && day <= 20))){
+    cout << "Риби" << endl;
+}
+    else if((month == 3 && (day >= 21 && day <=31)) || (month == 4 && (day >=4 && day <= 19))){
+    cout << "Овен" << endl;
+    }
+else if((month == 4 && (day >= 20 && day <=31)) || (month == 3 && (day >=5 && day <= 20))){
+    cout << "Телец" << endl;
+}
+
+    return 0;
+}
