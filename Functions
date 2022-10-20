@@ -1,0 +1,19 @@
+#include <iostream>
+
+using namespace std;
+void sayHi(string name,int age){
+cout << "Hello " << name << " you are " << age << " years old"<<endl;
+}
+double cube(double num){
+return num * num * num;
+}
+
+int main()
+{
+
+    sayHi("Mike",19);
+    sayHi("Toni",19);
+    sayHi("Yane",19);
+    cout << "5^3 = " << cube(5.0);
+    return 0;
+}
