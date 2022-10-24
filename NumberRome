@@ -1,0 +1,76 @@
+#include <iostream>
+
+using namespace std;
+
+int main()
+{
+
+int c; // променлива, съдържаща въведената стойност
+do {
+cout << "Enter a number to be converted to Roman: ";
+cin >> c;
+} while(c < 1 || c >= 39999); // Проверка за валидност на входа
+if(c >= 40 && c < 50) {
+cout << "XL";
+c -= 40;
+}
+else if(c >= 50 && c < 90) {
+cout << "L";
+c -= 50;
+} else if(c >= 90 && c < 100) {
+cout << "CL";
+c -= 90;
+}
+else if(c >= 100 && c < 400) {
+cout << "C";
+c -= 100;
+}
+else if(c >= 400 && c < 500) {
+cout << "CD";
+c -= 400;
+} else if(c >= 500 && c < 900) {
+cout << "D";
+c -= 500;
+}
+else if(c >= 900 && c < 1000) {
+cout << "CM";
+c -= 900;
+}
+else if(c >= 1000 && c < 4000) {
+cout << "M";
+c -= 1000;
+}
+
+switch(c / 1000) {
+case 3: cout << "M";
+case 2: cout << "M";
+case 1: cout << "M";
+}
+
+switch(c / 100) {
+case 3: cout << "C";
+case 2: cout << "C";
+case 1: cout << "C";
+}
+
+
+switch(c / 10) {
+case 3: cout << "X";
+case 2: cout << "X";
+case 1: cout << "X";
+}
+switch(c % 10){
+case 9: cout << "IX"; break;
+case 8: cout << "VIII"; break;
+case 7: cout << "VII"; break;
+case 6: cout << "VI"; break;
+case 5: cout << "V"; break;
+case 4: cout << "IV"; break;
+case 3: cout << "I";
+case 2: cout << "I";
+case 1: cout << "I";
+}
+cout << endl;
+
+    return 0;
+}
