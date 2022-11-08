@@ -1,0 +1,58 @@
+#include <iostream>
+#include<algorithm>
+#include<math.h>
+
+using namespace std;
+
+int main()
+{
+  int n;
+  int sum = 0, br = 0;
+  double average;
+  int maxValue = -99999999;//INT_MIN
+  int minValue = 99999999;//INT_MAX
+
+  cout << "Enter a number: ";
+  cin >> n;
+
+  if(!cin || n <=0){
+    cout << "Wrong output";
+    return 1;
+  }
+
+  int arr[n];
+
+  for(int i = 0; i < n; i++){
+    cout << "Enter value" << i + 1 << ": ";
+    cin >> arr[i];
+
+    }
+
+    for(int i = 0; i < n; i++){
+            if(arr[i] % 2 != 0){
+                cout << arr[i] << " " << endl;
+                br ++;
+                sum += arr[i];
+                if(minValue > arr[i])
+                    minValue = arr[i];
+
+                 if(maxValue < arr[i])
+                    maxValue = arr[i];
+            }
+
+    }
+    average = sum / br;
+
+    cout<<"Sum of uncountable numbers: " <<sum << endl ;
+    cout << "Min: " << minValue << endl;
+    cout << "Max: " << maxValue << endl;
+    cout << "Average: " << average << endl;
+
+
+
+
+
+
+
+    return 0;
+}
