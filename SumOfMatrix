@@ -1,0 +1,82 @@
+#include <iostream>
+#include<iomanip>
+
+using namespace std;
+
+int main()
+{
+   int n, k;
+   int row, colum;
+   int **a =NULL;
+    //int a[20][100]
+
+
+
+cout << "Enter a matrix A " << endl;
+   cout << "Enter n: ";
+   cin >> n;
+   cout << "Enter k: ";
+   cin >> k;
+
+   a = new int*[n];
+   for( row = 0; row < n; row++){
+    a[row] = new int [k];
+   }
+
+for( row = 0; row < n; row++){
+  for( colum = 0; colum < k; colum++){
+cout << "a[" << row << "][" << colum << "]=";
+cin >> *(*(a + row) + colum);
+   }
+   }
+
+   for( row = 0; row < n; row++){
+  for( colum = 0; colum < k; colum++){
+cout << setw(5) << *(*(a + row) + colum);
+   }
+   cout << endl;
+   }
+
+
+
+int b[k][n];
+cout << "Enter a matrix B " << endl;
+
+   for( row = 0; row < n; row++){
+  for( colum = 0; colum < k; colum++){
+cout << "a[" << row << "][" << colum << "]=";
+cin >> b[row][colum];
+   }
+   }
+
+
+
+   for( row = 0; row < k; row++){
+  for( colum = 0; colum < n; colum++){
+cout << setw(5) << b[row][colum];
+   }
+   cout << endl;
+   }
+
+int c [n][n];
+cout << "Matrix C = A + B" << endl;
+
+  for( row = 0; row < n; row++){
+  for( colum = 0; colum < n; colum++){
+c[row][colum] = a[row][colum] + b[row][colum];
+   }
+   }
+
+
+
+   for( row = 0; row < n; row++){
+  for( colum = 0; colum < n; colum++){
+cout << setw(5) << c[row][colum];
+   }
+   cout << endl;
+   }
+
+
+
+    return 0;
+}
