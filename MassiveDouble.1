@@ -1,0 +1,87 @@
+#include <iostream>
+#include<iomanip>
+
+using namespace std;
+
+int main()
+{
+   int n, k;
+   int row, colum;
+   int **a =NULL; //int a[20][100]
+
+
+
+   cout << "Enter n: ";
+   cin >> n;
+   cout << "Enter k: ";
+   cin >> k;
+
+   a = new int*[n];
+   for( row = 0; row < n; row++){
+    a[row] = new int [k];
+   }
+
+for( row = 0; row < n; row++){
+  for( colum = 0; colum < k; colum++){
+cout << "a[" << row << "][" << colum << "]=";
+cin >> *(*(a + row) + colum);
+   }
+   }
+
+   for( row = 0; row < n; row++){
+  for( colum = 0; colum < k; colum++){
+cout << setw(5) << *(*(a + row) + colum);
+   }
+   cout << endl;
+   }
+
+
+   int* p[20];
+   int m = -1;
+   cout << "\n\nFirst new array\n";
+   for(row =0; row <= n-1; row +=2){
+    m++;
+    *(p + m) = *(a + row);
+
+   }
+
+   for(int i = 0; i < m + 1; i++){
+  for( colum = 0; colum < k; colum++){
+cout << setw(5) <<*(*(p + i) + colum) + 1;//p[i][colum] +1
+   }
+   cout<< endl;
+   }
+
+
+
+
+   int* q[20];
+   int r = -1;
+ cout << "\n\nSecond new array\n";
+   for(row =1; row <= n-1; row +=2){
+    r++;
+    *(q + r) = *(a + row);
+}
+
+for(int i = 0; i < r + 1; i++){
+  for( colum = 0; colum < k; colum++){
+cout << setw(5) <<*(*(q + i) + colum) + 2;//q[i][colum] +1
+   }
+   cout<< endl;
+   }
+
+   cout << "\n\nThird new array\n";
+   if(n % 2 == 0){
+    for(row = 0; row < m + 1; row++){
+  for( colum = 0; colum < k; colum++){
+cout << setw(5) <<*(*(p + row) + colum) + *(*(q + row) + colum);
+   }
+   cout<< endl;
+   }
+
+   }
+
+
+
+    return 0;
+}
