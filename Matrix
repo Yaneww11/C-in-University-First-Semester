@@ -1,0 +1,51 @@
+#include <iostream>
+#include<iomanip>
+using namespace std;
+
+int main()
+{
+
+   int n, k;
+   int row, colum;
+   int sum = 0;
+   int sumColum = 0;
+    //int a[20][100]
+
+
+
+cout << "Enter a matrix B " << endl;
+   cout << "Enter n: ";
+   cin >> n;
+   cout << "Enter k: ";
+   cin >> k;
+
+int b[k][n];
+
+  for( row = 0; row < n; row++){
+    for( colum = 0; colum < k; colum++){
+    cout << "b[" << row << "][" << colum << "]=";
+    cin >> b[row][colum];
+
+    }
+
+ }
+
+
+
+   for( row = 0; row < k; row++){
+  for( colum = 0; colum < n; colum++){
+cout << setw(2) << b[row][colum] << "     ";
+ sum = sum + b[row][colum];
+ sumColum = sumColum + b[colum][row];
+   }
+   cout << "Sum of the row " << row << " = " << sum << "    ";
+   cout << "Sum of the colum " << row << " = " << sumColum << endl;
+        // Reset the sum
+        sumColum = 0;
+        sum = 0;
+   cout << endl;
+   }
+
+
+    return 0;
+}
